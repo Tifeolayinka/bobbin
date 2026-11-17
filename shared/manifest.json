@@ -1,47 +1,47 @@
 {
-  "tife-create-thread": [
+  "bobbin-create-thread": [
     "workflow.md",
     "documents.md",
     "testing.md"
   ],
-  "tife-update-context": [
+  "bobbin-update-context": [
     "workflow.md",
     "documents.md",
     "testing.md"
   ],
-  "tife-update-thread": [
+  "bobbin-update-thread": [
     "workflow.md",
     "documents.md",
     "testing.md"
   ],
-  "tife-maintain-tests": [
+  "bobbin-maintain-tests": [
     "workflow.md",
     "testing.md",
     "documents.md"
   ],
-  "tife-prepare-next-session": [
+  "bobbin-prepare-next-session": [
     "workflow.md",
     "documents.md",
     "testing.md",
     "handoff.md"
   ],
-  "tife-sync-context": [
+  "bobbin-sync-context": [
     "workflow.md",
     "documents.md",
     "testing.md",
     "review.md"
   ],
-  "tife-audit-context": [
+  "bobbin-audit-context": [
     "workflow.md",
     "documents.md",
     "testing.md",
     "review.md"
   ],
-  "tife-update-teammate-handoff": [
+  "bobbin-update-teammate-handoff": [
     "workflow.md",
     "documents.md"
   ],
-  "tife-end-thread": [
+  "bobbin-end-thread": [
     "workflow.md",
     "documents.md",
     "testing.md",

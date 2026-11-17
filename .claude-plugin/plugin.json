@@ -1,19 +1,19 @@
 {
-  "name": "tife",
+  "name": "bobbin",
   "version": "0.1.0",
   "description": "Feature context, durable work threads, test records, and short session handoffs.",
   "license": "MIT",
   "skills": [
-    "./skills/tife-create-thread",
-    "./skills/tife-update-context",
-    "./skills/tife-update-thread",
-    "./skills/tife-maintain-tests",
-    "./skills/tife-prepare-next-session",
-    "./skills/tife-sync-context",
-    "./skills/tife-audit-context",
-    "./skills/tife-update-teammate-handoff",
-    "./skills/tife-end-thread"
+    "./skills/bobbin-create-thread",
+    "./skills/bobbin-update-context",
+    "./skills/bobbin-update-thread",
+    "./skills/bobbin-maintain-tests",
+    "./skills/bobbin-prepare-next-session",
+    "./skills/bobbin-sync-context",
+    "./skills/bobbin-audit-context",
+    "./skills/bobbin-update-teammate-handoff",
+    "./skills/bobbin-end-thread"
   ],
-  "homepage": "https://github.com/Tifeolayinka/Tife",
-  "repository": "https://github.com/Tifeolayinka/Tife"
+  "homepage": "https://github.com/Tifeolayinka/bobbin",
+  "repository": "https://github.com/Tifeolayinka/bobbin"
 }

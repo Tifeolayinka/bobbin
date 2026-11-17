@@ -36,7 +36,7 @@ class PackagingTests(unittest.TestCase):
     def test_collision_preflight_writes_nothing(self):
         with tempfile.TemporaryDirectory() as temp:
             target = Path(temp)
-            existing = target / 'tife-update-thread'
+            existing = target / 'bobbin-update-thread'
             existing.mkdir()
             (existing / 'custom.md').write_text('custom content')
             before = sorted(str(p.relative_to(target)) for p in target.rglob('*'))
@@ -54,7 +54,7 @@ class PackagingTests(unittest.TestCase):
     def test_dangling_symlink_is_not_overwritten(self):
         with tempfile.TemporaryDirectory() as temp:
             target = Path(temp)
-            link = target / 'tife-create-thread'
+            link = target / 'bobbin-create-thread'
             link.symlink_to(target / 'missing')
             with self.assertRaises(FileExistsError):
                 installer.install(target)
@@ -67,7 +67,7 @@ class PackagingTests(unittest.TestCase):
             original = shutil.copytree
 
             def failing_copy(source, destination, *args, **kwargs):
-                if Path(destination).resolve() == (target / 'tife-update-context').resolve():
+                if Path(destination).resolve() == (target / 'bobbin-update-context').resolve():
                     raise OSError('simulated disk failure')
                 return original(source, destination, *args, **kwargs)
 
@@ -82,7 +82,7 @@ class PackagingTests(unittest.TestCase):
             shutil.copytree(ROOT / 'skills', root / 'skills')
             shutil.copytree(ROOT / 'shared', root / 'shared')
             shutil.copytree(ROOT / '.claude-plugin', root / '.claude-plugin')
-            (root / 'skills/tife-create-thread/references/workflow.md').write_text('stale')
+            (root / 'skills/bobbin-create-thread/references/workflow.md').write_text('stale')
             target = Path(temp) / 'target'
             with self.assertRaises(ValueError):
                 installer.install(target, root=root)

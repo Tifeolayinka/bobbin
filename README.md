@@ -1,4 +1,4 @@
-# Tife
+# Bobbin
 
 A development skill collection that keeps feature knowledge, working state, and test evidence
 available across AI conversations. Save the documents, then hand the next session a short prompt
@@ -9,19 +9,25 @@ The instructions are portable Markdown. Codex UI metadata and a Claude Code plug
 included; host-specific discovery and automatic invocation depend on the installed application.
 No hooks, background services, or external accounts are required.
 
+A bobbin holds the thread; Bobbin holds the threads of your work between conversations.
+
+> **Renamed from Tife.** The skills were `tife-*` and are now `bobbin-*`. If you installed the
+> old version, remove it (`/plugin uninstall tife@tife`, or delete the `tife-*` skill folders),
+> then install Bobbin below. Your saved documents in `docs/` keep working unchanged.
+
 ## Skills
 
 | Skill | Purpose |
 |---|---|
-| `tife-create-thread` | Start a feature, fix, or investigation record; reuse ongoing work |
-| `tife-update-context` | Create missing context or update established knowledge |
-| `tife-update-thread` | Checkpoint progress, decisions, failed attempts, and remaining work |
-| `tife-maintain-tests` | Maintain requirement-linked scenarios and actual verification results |
-| `tife-prepare-next-session` | Save context and return a short continuation prompt |
-| `tife-sync-context` | Compare requirements and documentation with implementation |
-| `tife-audit-context` | Check document consistency, links, duplication, and coverage |
-| `tife-update-teammate-handoff` | Maintain a person's linked task and question document |
-| `tife-end-thread` | Save durable knowledge, route unfinished items, and archive work |
+| `bobbin-create-thread` | Start a feature, fix, or investigation record; reuse ongoing work |
+| `bobbin-update-context` | Create missing context or update established knowledge |
+| `bobbin-update-thread` | Checkpoint progress, decisions, failed attempts, and remaining work |
+| `bobbin-maintain-tests` | Maintain requirement-linked scenarios and actual verification results |
+| `bobbin-prepare-next-session` | Save context and return a short continuation prompt |
+| `bobbin-sync-context` | Compare requirements and documentation with implementation |
+| `bobbin-audit-context` | Check document consistency, links, duplication, and coverage |
+| `bobbin-update-teammate-handoff` | Maintain a person's linked task and question document |
+| `bobbin-end-thread` | Save durable knowledge, route unfinished items, and archive work |
 
 ## Install with npx
 
@@ -29,15 +35,15 @@ The quickest install for any agent the [skills CLI](https://github.com/vercel-la
 supports (Claude Code, Codex, Cursor and others). Requires Node.js:
 
 ```sh
-npx skills add Tifeolayinka/Tife
+npx skills add Tifeolayinka/bobbin
 ```
 
 It asks which skills and which agents to install for. To pick one skill, or preview without
 installing:
 
 ```sh
-npx skills add Tifeolayinka/Tife --skill tife-prepare-next-session
-npx skills add Tifeolayinka/Tife --list
+npx skills add Tifeolayinka/bobbin --skill bobbin-prepare-next-session
+npx skills add Tifeolayinka/bobbin --list
 ```
 
 Start a fresh session afterwards so the skills load. Use one install method per host: npx, the
@@ -48,12 +54,12 @@ plugin, or the local install below. Mixing them creates duplicate entries.
 In Claude Code, add this repository as a plugin marketplace, then install the plugin:
 
 ```text
-/plugin marketplace add Tifeolayinka/Tife
-/plugin install tife@tife
+/plugin marketplace add Tifeolayinka/bobbin
+/plugin install bobbin@bobbin
 ```
 
 Start a fresh session afterwards so the skills load. To update later, run
-`/plugin marketplace update tife`. Use only one install method per host.
+`/plugin marketplace update bobbin`. Use only one install method per host.
 
 ## Install locally
 
@@ -61,8 +67,8 @@ Requires Python 3.9 or later for the helper scripts; using the skill instruction
 does not require Python. Clone the repository, then install from its root:
 
 ```sh
-git clone https://github.com/Tifeolayinka/Tife.git
-cd Tife
+git clone https://github.com/Tifeolayinka/bobbin.git
+cd bobbin
 python3 scripts/validate.py
 python3 scripts/install.py --target ~/.codex/skills
 ```
@@ -71,7 +77,7 @@ For Claude Code user skills, use `--target ~/.claude/skills`. For a project-scop
 use its agent's supported skill directory, for example `--target /path/to/project/.claude/skills`.
 If Codex uses a custom CODEX_HOME, pass its `skills` directory explicitly.
 
-The installer copies the nine self-contained `tife-*` folders, including references and UI
+The installer copies the nine self-contained `bobbin-*` folders, including references and UI
 metadata. It refuses existing destination folders, leaves unrelated skills alone, and does not
 edit agent settings. Run with `--dry-run` to preview. To update an existing installation, back up
 and remove only this collection's nine installed folders, then reinstall. Keep any custom edits
@@ -87,15 +93,15 @@ can create duplicate entries.
 In a host supporting `$skill-name` invocation:
 
 ```text
-Use $tife-create-thread to start planning notification preferences. Do not implement yet.
-Use $tife-update-context to record the notification rules we agreed on.
-Use $tife-maintain-tests to prepare the feature's test scenarios.
-Use $tife-update-thread to save our current progress.
-Use $tife-prepare-next-session before I clear this context window.
-Use $tife-sync-context to check the notification docs against the implementation.
-Use $tife-audit-context to review the notification documents for contradictions.
-Use $tife-update-teammate-handoff to prepare the remaining UI questions for a teammate.
-Use $tife-end-thread to close this completed feature work.
+Use $bobbin-create-thread to start planning notification preferences. Do not implement yet.
+Use $bobbin-update-context to record the notification rules we agreed on.
+Use $bobbin-maintain-tests to prepare the feature's test scenarios.
+Use $bobbin-update-thread to save our current progress.
+Use $bobbin-prepare-next-session before I clear this context window.
+Use $bobbin-sync-context to check the notification docs against the implementation.
+Use $bobbin-audit-context to review the notification documents for contradictions.
+Use $bobbin-update-teammate-handoff to prepare the remaining UI questions for a teammate.
+Use $bobbin-end-thread to close this completed feature work.
 ```
 
 For other hosts, select the installed skill by name or ask in natural language. The exact command
@@ -168,7 +174,7 @@ to assess realistic use before broad rollout. No live-host behavioral evaluation
 
 ## Repository and license
 
-Public repository: [Tifeolayinka/Tife](https://github.com/Tifeolayinka/Tife).
+Public repository: [Tifeolayinka/bobbin](https://github.com/Tifeolayinka/bobbin).
 
 The collection is MIT licensed. It contains no account credentials or private project data.
 To contribute, fork the repository, make changes, run the validation commands above, and open

@@ -28,7 +28,7 @@ def install(target, root=ROOT, dry_run=False):
     target.mkdir(parents=True, exist_ok=True)
     created = []
     try:
-        with tempfile.TemporaryDirectory(prefix='.tife-install-', dir=target) as staging:
+        with tempfile.TemporaryDirectory(prefix='.bobbin-install-', dir=target) as staging:
             for name in names:
                 shutil.copytree(root / 'skills' / name, Path(staging) / name)
             for name in names:
