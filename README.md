@@ -23,6 +23,26 @@ No hooks, background services, or external accounts are required.
 | `tife-update-teammate-handoff` | Maintain a person's linked task and question document |
 | `tife-end-thread` | Save durable knowledge, route unfinished items, and archive work |
 
+## Install with npx
+
+The quickest install for any agent the [skills CLI](https://github.com/vercel-labs/skills)
+supports (Claude Code, Codex, Cursor and others). Requires Node.js:
+
+```sh
+npx skills add Tifeolayinka/Tife
+```
+
+It asks which skills and which agents to install for. To pick one skill, or preview without
+installing:
+
+```sh
+npx skills add Tifeolayinka/Tife --skill tife-prepare-next-session
+npx skills add Tifeolayinka/Tife --list
+```
+
+Start a fresh session afterwards so the skills load. Use one install method per host: npx, the
+plugin, or the local install below. Mixing them creates duplicate entries.
+
 ## Install as a Claude Code plugin
 
 In Claude Code, add this repository as a plugin marketplace, then install the plugin:
@@ -33,8 +53,7 @@ In Claude Code, add this repository as a plugin marketplace, then install the pl
 ```
 
 Start a fresh session afterwards so the skills load. To update later, run
-`/plugin marketplace update tife`. Use either the plugin or the local folder install below, not
-both.
+`/plugin marketplace update tife`. Use only one install method per host.
 
 ## Install locally
 
